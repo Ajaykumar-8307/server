@@ -17,12 +17,7 @@ mongoose.connect(URL)
 });
 
 app.get('/', async (req,res) => {
-    const {name} = req.query;
-    const username = await User.findOne({name});
-    if (!username) {
-        return res.status(404).json({message: "User not found"});
-    }
-    res.send(`Hello EveryOne hi ${username.email}`);
+    res.send(`Hello EveryOne hi`);
 });
 
 app.use('/api/v1/user', useroute);
